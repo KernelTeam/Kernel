@@ -16,15 +16,16 @@ import org.bukkit.plugin.java.JavaPlugin;
  *
  */
 public class Kernel extends JavaPlugin {
-
     private static Kernel instance;
 
-    /**
-     * @author SiriuseR
-     */
+    private Helper worker;
+
     @Override
     public void onEnable() {
         LogUtil.init(this);
+
+        worker = Helper.getInstance();
+        worker.setMainPlugin(this);
 
         PluginManager pm = getServer().getPluginManager();
 
@@ -32,19 +33,18 @@ public class Kernel extends JavaPlugin {
         LogUtil.info(pdfFile.getName() + " version " + pdfFile.getVersion() + " is enabled!");
     }
 
-    /**
-     * @author SiriuseR
-     */
     @Override
     public void onDisable() {
         getServer().getScheduler().cancelTasks(this);
+
+        worker.disableAll();
+        Helper.dispose();
 
         PluginDescriptionFile pdfFile = this.getDescription();
         LogUtil.info(pdfFile.getName() + " version " + pdfFile.getVersion() + " is disabled!");
     }
 
     /**
-     * @author SiriuseR
      * @return Kernel Instance
      */
     public static Kernel getInstance() {
