@@ -50,4 +50,10 @@ public class Kernel extends JavaPlugin {
     public static Kernel getInstance() {
         return instance;
     }
+
+    public void Debug(final String str) {
+        if (worker.getConfig().isDebug()) {
+            LogUtil.info("<DEBUG> " + str);
+        }
+    }
 }

@@ -1,3 +1,15 @@
+#>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+#        Kernel ConfigFile!
+#        Author SiriuseR(dejiplus)
+#       License GPLv3
+#<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 
-# Don't touch
+#>>>>>>>>>>>>>>>>>>#
+#   Debug Config   #
+#<<<<<<<<<<<<<<<<<<#
+Debug: false
+
+#>>>>>>>>>>>>>>>>>>#
+#   DO NOT TOUCH   #
+#<<<<<<<<<<<<<<<<<<#
 ConfigVersion: 1

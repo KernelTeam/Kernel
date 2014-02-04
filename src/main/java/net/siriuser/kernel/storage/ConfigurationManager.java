@@ -64,4 +64,11 @@ public class ConfigurationManager {
             //TODO: 古いConfigの項目を新しいConfigに反映させる。
         }
     }
+
+    /**
+     * Denbug setting.
+     */
+    public boolean isDebug() {
+        return config.getBoolean("Debug", false);
+    }
 }
